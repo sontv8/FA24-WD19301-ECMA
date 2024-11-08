@@ -1,0 +1,49 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.container{
+    max-width: 1440px;
+    margin: auto;
+}
+
+.nav-bar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 0;
+}
+.nav-bar ul{
+    display: flex;
+    gap: 32px;
+}
+.nav-bar ul li{
+    list-style: none;
+}
+.nav-bar ul li a{
+    text-decoration: none;
+}
+.banner img{
+    width: 100%;
+}
+.new-product-title{
+    display: flex;
+    justify-content: space-between;
+}
+.new-product-content, .news-content{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 32px;
+}
+.product-item img, .news-item>img{
+    width: 100%;
+}
+.gallery-content{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 32px;
+}
+.gallery-content img{
+    width: 100%;
+}
