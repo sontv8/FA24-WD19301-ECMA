@@ -7,11 +7,30 @@ import AddProduct from "./pages/Admin/AddProduct";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 function App() {
+  const products = [
+    {
+      id: "1",
+      name: "Sản phẩm 1",
+      price: 1000,
+      image:
+        "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Yone_19.jpg",
+    },
+    {
+      id: "2",
+      name: "Sản phẩm 2",
+      price: 2000,
+      image:
+        "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Yasuo_68.jpg",
+    },
+  ];
   return (
     <>
       <BrowserRouter>
         <Routes>
-          <Route path="/admin/products" element={<ProductList />} />
+          <Route
+            path="/admin/products"
+            element={<ProductList products={products} />}
+          />
         </Routes>
       </BrowserRouter>
     </>
