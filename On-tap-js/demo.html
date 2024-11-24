@@ -6,24 +6,34 @@
     <title>Document</title>
   </head>
   <body>
+    <div id="root"></div>
     <script>
-      const useState = (initialState) => {
-        let state = initialState;
-        const getState = () => {
-          return state;
-        };
-        const setState = (newValue) => {
-          state = newValue;
-        };
+      //   const useState = (initialState) => {
+      //     let state = initialState;
+      //     const getState = () => {
+      //       return state;
+      //     };
+      //     const setState = (newValue) => {
+      //       state = newValue;
+      //     };
 
-        return [getState, setState];
-      };
-      //   console.log(useState(10)); //[ function, function ]
+      //     return [getState, setState];
+      //   };
+      //   //   console.log(useState(10)); //[ function, function ]
 
-      const [count, setCount] = useState(10);
+      //   const [count, setCount] = useState(10);
 
-      setCount(20);
-      console.log(count());
+      //   setCount(20);
+      //   console.log(count());
+
+      //   map()
+      const myNumber = [1, 2, 3];
+      const newData = myNumber.map((item, index) => {
+        return `<h2>${index + 1}</h2>`;
+      });
+      console.log(newData.join(""));
+
+      document.querySelector("#root").innerHTML = newData.join("");
     </script>
   </body>
 </html>

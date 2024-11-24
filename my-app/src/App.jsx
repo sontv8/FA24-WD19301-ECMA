@@ -23,13 +23,17 @@ function App() {
         "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Yasuo_68.jpg",
     },
   ];
+
+  const onRemove = (id) => {
+    console.log(id);
+  };
   return (
     <>
       <BrowserRouter>
         <Routes>
           <Route
             path="/admin/products"
-            element={<ProductList products={products} />}
+            element={<ProductList products={products} onRemove={onRemove} />}
           />
         </Routes>
       </BrowserRouter>
