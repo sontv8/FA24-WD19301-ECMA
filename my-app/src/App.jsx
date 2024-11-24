@@ -7,7 +7,7 @@ import AddProduct from "./pages/Admin/AddProduct";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 function App() {
-  const products = [
+  const data = [
     {
       id: "1",
       name: "Sản phẩm 1",
@@ -24,8 +24,16 @@ function App() {
     },
   ];
 
+  const [products, setProducts] = useState(data);
+  // console.log("Vua moi lam xong: ", products);
+
   const onRemove = (id) => {
-    console.log(id);
+    if (confirm("Bạn có chắc chắn muốn xoá không?")) {
+      const newData = products.filter((item) => {
+        return item.id != id;
+      });
+      setProducts(newData);
+    }
   };
   return (
     <>
