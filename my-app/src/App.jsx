@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
 import "./App.css";
@@ -7,25 +7,13 @@ import AddProduct from "./pages/Admin/AddProduct";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 function App() {
-  const data = [
-    {
-      id: "1",
-      name: "Sản phẩm 1",
-      price: 1000,
-      image:
-        "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Yone_19.jpg",
-    },
-    {
-      id: "2",
-      name: "Sản phẩm 2",
-      price: 2000,
-      image:
-        "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Yasuo_68.jpg",
-    },
-  ];
+  const [products, setProducts] = useState([]);
 
-  const [products, setProducts] = useState(data);
-  // console.log("Vua moi lam xong: ", products);
+  useEffect(() => {
+    fetch("http://localhost:3000/products")
+      .then((response) => response.json())
+      .then((data) => setProducts(data));
+  }, []);
 
   const onRemove = (id) => {
     if (confirm("Bạn có chắc chắn muốn xoá không?")) {
@@ -37,14 +25,12 @@ function App() {
   };
   return (
     <>
-      <BrowserRouter>
-        <Routes>
-          <Route
-            path="/admin/products"
-            element={<ProductList products={products} onRemove={onRemove} />}
-          />
-        </Routes>
-      </BrowserRouter>
+      <Routes>
+        <Route
+          path="/admin/products"
+          element={<ProductList products={products} onRemove={onRemove} />}
+        />
+      </Routes>
     </>
   );
 }
@@ -63,5 +49,5 @@ Admin
   UpdateProduct
   DetailProduct
 
-
+  
 */

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      /*
+             Đồng bộ
+             Bất đồng bộ
+             Xử lý bất đồng bộ
+         */
+
+      console.log("Start");
+
+      const myPromise = new Promise((resolve, reject) => {
+        setTimeout(() => {
+          let data = {
+            name: "Hieu",
+            age: 20,
+          };
+          resolve(data);
+        }, 2000);
+      });
+      /*
+         pending
+         fullfilled
+         rejected
+       */
+      myPromise
+        .then((data) => {
+          console.log(data);
+          data.email = "abcd@gmail.com";
+          return data;
+        })
+        .then((newData) => {
+          console.log(newData);
+        });
+
+      // console.log(data);
+    </script>
+  </body>
+</html>

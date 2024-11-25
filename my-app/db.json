@@ -1,0 +1,22 @@
+{
+  "products": [
+    {
+      "id": "1",
+      "name": "Sản phẩm 1",
+      "price": 1000,
+      "image": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Yone_19.jpg"
+    },
+    {
+      "id": "2",
+      "name": "Sản phẩm 2",
+      "price": 2000,
+      "image": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Yasuo_68.jpg"
+    },
+    {
+      "id": "2",
+      "name": "Sản phẩm 3",
+      "price": 3000,
+      "image": "https://en.kicdo.com/images/products/Seraphine_0.jpg"
+    }
+  ]
+}
