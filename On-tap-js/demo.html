@@ -27,13 +27,30 @@
       //   console.log(count());
 
       //   map()
-      const myNumber = [1, 2, 3];
-      const newData = myNumber.map((item, index) => {
-        return `<h2>${index + 1}</h2>`;
-      });
-      console.log(newData.join(""));
+      // const myNumber = [1, 2, 3];
+      // const newData = myNumber.map((item, index) => {
+      //   return `<h2>${index + 1}</h2>`;
+      // });
+      // console.log(newData.join(""));
 
-      document.querySelector("#root").innerHTML = newData.join("");
+      // document.querySelector("#root").innerHTML = newData.join("");
+
+      // const myName = "sontv";
+
+      // const info = { [myName]: "abcd" };
+      // console.log(info);
+
+      // computed property name
+
+      // spread operator ...
+
+      const myInfo = {
+        name: "sontv",
+        age: 20,
+      };
+
+      const yourInfo = { ...myInfo, address: "HN" };
+      console.log(yourInfo);
     </script>
   </body>
 </html>

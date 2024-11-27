@@ -13,10 +13,16 @@
       "image": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Yasuo_68.jpg"
     },
     {
-      "id": "2",
-      "name": "Sản phẩm 3",
-      "price": 3000,
-      "image": "https://en.kicdo.com/images/products/Seraphine_0.jpg"
+      "name": "New Product",
+      "price": "1000",
+      "image": "https://lienquan.garena.vn/wp-content/uploads/2024/05/70ea305ed24716682532486c9625a8315cfe1cf6922681.jpg",
+      "id": "VODAmoS"
+    },
+    {
+      "name": "New Product 2",
+      "price": "100",
+      "image": "https://picsum.photos/200/200",
+      "id": "xRpHGmb"
     }
   ]
 }

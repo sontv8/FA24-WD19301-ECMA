@@ -23,6 +23,15 @@ function App() {
       setProducts(newData);
     }
   };
+  const onAdd = (product) => {
+    fetch(`http://localhost:3000/products`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(product),
+    });
+  };
   return (
     <>
       <Routes>
@@ -30,7 +39,10 @@ function App() {
           path="/admin/products"
           element={<ProductList products={products} onRemove={onRemove} />}
         />
-        <Route path="/admin/products/add" element={<AddProduct />} />
+        <Route
+          path="/admin/products/add"
+          element={<AddProduct onAdd={onAdd} />}
+        />
       </Routes>
     </>
   );
