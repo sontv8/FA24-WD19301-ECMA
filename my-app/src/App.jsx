@@ -30,6 +30,7 @@ function App() {
           path="/admin/products"
           element={<ProductList products={products} onRemove={onRemove} />}
         />
+        <Route path="/admin/products/add" element={<AddProduct />} />
       </Routes>
     </>
   );
