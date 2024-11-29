@@ -5,6 +5,7 @@ import "./App.css";
 import ProductList from "./pages/Admin/ProductList";
 import AddProduct from "./pages/Admin/AddProduct";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import UpdateProduct from "./pages/Admin/UpdateProduct";
 
 function App() {
   const [products, setProducts] = useState([]);
@@ -43,6 +44,7 @@ function App() {
           path="/admin/products/add"
           element={<AddProduct onAdd={onAdd} />}
         />
+        <Route path="/admin/products/:id/edit" element={<UpdateProduct />} />
       </Routes>
     </>
   );
