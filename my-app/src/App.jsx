@@ -18,15 +18,29 @@ function App() {
 
   const onRemove = (id) => {
     if (confirm("Bạn có chắc chắn muốn xoá không?")) {
-      const newData = products.filter((item) => {
-        return item.id != id;
+      fetch(`http://localhost:3000/products/${id}`, {
+        method: "DELETE",
+      }).then(() => {
+        const newData = products.filter((item) => {
+          return item.id != id;
+        });
+        setProducts(newData);
       });
-      setProducts(newData);
     }
   };
   const onAdd = (product) => {
     fetch(`http://localhost:3000/products`, {
       method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(product),
+    });
+  };
+
+  const onUpdate = (product) => {
+    fetch(`http://localhost:3000/products/${product.id}`, {
+      method: "PUT",
       headers: {
         "Content-Type": "application/json",
       },
@@ -44,7 +58,10 @@ function App() {
           path="/admin/products/add"
           element={<AddProduct onAdd={onAdd} />}
         />
-        <Route path="/admin/products/:id/edit" element={<UpdateProduct />} />
+        <Route
+          path="/admin/products/:id/edit"
+          element={<UpdateProduct onUpdate={onUpdate} />}
+        />
       </Routes>
     </>
   );

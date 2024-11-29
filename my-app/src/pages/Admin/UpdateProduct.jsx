@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 
-const UpdateProduct = () => {
+const UpdateProduct = (props) => {
   const [inputValues, setInputValues] = useState({});
 
   const id = useParams();
@@ -13,13 +13,14 @@ const UpdateProduct = () => {
 
   const onHandleChange = (e) => {
     const { name, value } = e.target;
-    console.log(name, value);
+    // console.log(name, value);
 
     setInputValues({ ...inputValues, [name]: value });
   };
 
   const onHandleSubmit = (e) => {
     e.preventDefault();
+    props.onUpdate(inputValues);
   };
   return (
     <div>
